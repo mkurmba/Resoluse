@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'signin.css' %}">    </head>
+    <body>
+
+
+        <h2>hello world</h2>
+        <p>clock in time is {{clock_in_time.datetime}}</p>
+        <button type="submit"><a href="/signout" style="color: black;">SignOut</button>
+
+        <script src="" async defer></script>
+    </body>
+</html>

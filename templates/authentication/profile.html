@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <title>profile page</title>
+<head>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    
+
+</head>
+<body>
+
+<!-- Top navigation -->
+<div class="topnav">
+
+    <!-- Centered link -->
+    <div class="topnav-centered">
+      <a href="#home" class="resoulselogo">Resoulse</a>
+    </div>
+
+  
+    <!-- Left-aligned links (default) -->
+    <a href="/about">About</a>
+  
+    <!-- Right-aligned links -->
+
+  
+  </div>
+  <div class="profile">
+
+    <h1> Hello {{ fname }}</h1>
+    <h4>You're successfully logged in!</h4>
+    <form method="post" action="/clocked">
+      {% csrf_token %}
+      <input type="submit" name="clock_in" value="Clock In">
+    </form>
+
+    <button type="submit"><a href="/signout" style="color: black;">SignOut</button>
+
+</div>
+  
+
+
+</body>
+</html>

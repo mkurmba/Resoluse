@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sign Up</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'signin.css' %}">
+    </head>
+    <body class="align">
+
+        {% for message in messages %}
+        <div class ="alert alert-{{ message.tags }} alert-dismissable fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+        <span aria-hidden="true">&times;</span>
+        </div>
+        {% endfor %}
+
+        <h1>Sign Up</h1>
+        
+        <form action="/signup" method="post" class="form login">
+            <div class="form__field">
+            {% csrf_token %}
+            <label for="" class="hidden">Username</label>
+                <input type="text" id="login__username" class="form__input" name="username" placeholder="Username (Alpha Numeric)" Required>
+            </div>
+
+                <div class="form__field">
+                <label for="login__username" class="hidden">First Name</label>
+                <input type="text" id="fname" name="fname" placeholder="First Name" Required>
+            </div>
+                <div class="form__field">
+                <label for="" class="hidden" >Last Name</label>
+                <input type="text" id="lname" name="lname" placeholder="Last Name" Required>
+            </div>
+                <div class="form__field">
+                <label for="" class="hidden" >Email Address</label>
+                <input type="email" id="login__username" class="form__input" name="email" placeholder="Email" Required>
+            </div>
+                <div class="form__field">
+                <label for="" class="hidden">Password</label>
+                <input type="password" id="pass1" name="pass1" placeholder="Password" Required>
+            </div>
+                
+                <div class="form__field">
+                <label for="" class="hidden">Confirm Your Password</label>
+                <input type="password" id="pass2" name="pass2" placeholder="Confirm Your Password" Required>  
+            </div>
+                <br>
+            
+                <div class="form__field">
+                    <input type="submit" value="Sign Up">
+                  </div>
+                
+            </form>
+            
+        <script src="" async defer></script>
+    </body>
+</html>
